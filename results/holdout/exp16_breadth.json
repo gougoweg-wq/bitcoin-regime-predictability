@@ -1,0 +1,209 @@
+{
+ "universe": {
+  "symbols_total": 913,
+  "ever_in_top30": 156,
+  "avg_names_per_day": 30.0
+ },
+ "strategies": {
+  "CARRY": {
+   "sharpe": 0.14,
+   "sharpe_ci95": [
+    -1.39,
+    1.75
+   ],
+   "annual_return": -0.053,
+   "annual_vol": 0.492,
+   "max_dd": -0.583,
+   "by_year_return": {
+    "2025": -0.302,
+    "2026": 0.298
+   },
+   "funding_part_annual": 0.384,
+   "turnover_per_year": 53.9
+  },
+  "MOM": {
+   "sharpe": 0.9,
+   "sharpe_ci95": [
+    -0.32,
+    2.24
+   ],
+   "annual_return": 0.406,
+   "annual_vol": 0.546,
+   "max_dd": -0.43,
+   "by_year_return": {
+    "2025": 1.211,
+    "2026": -0.155
+   },
+   "funding_part_annual": 0.258,
+   "turnover_per_year": 46.6
+  },
+  "REGIME": {
+   "sharpe": 0.1,
+   "sharpe_ci95": [
+    -1.14,
+    1.37
+   ],
+   "annual_return": -0.033,
+   "annual_vol": 0.376,
+   "max_dd": -0.34,
+   "by_year_return": {
+    "2025": -0.036,
+    "2026": -0.024
+   },
+   "funding_part_annual": 0.101,
+   "turnover_per_year": 12.9
+  },
+  "EW_BUYHOLD": {
+   "sharpe": -0.34,
+   "sharpe_ci95": [
+    -1.44,
+    0.89
+   ],
+   "annual_return": -0.423,
+   "annual_vol": 0.761,
+   "max_dd": -0.734,
+   "by_year_return": {
+    "2025": -0.565,
+    "2026": -0.16
+   },
+   "funding_part_annual": 0.133,
+   "turnover_per_year": 8.3
+  },
+  "BTC_BUYHOLD": {
+   "sharpe": -0.12,
+   "sharpe_ci95": [
+    -1.42,
+    1.3
+   ],
+   "annual_return": -0.135,
+   "annual_vol": 0.43,
+   "max_dd": -0.537,
+   "by_year_return": {
+    "2025": -0.11,
+    "2026": -0.138
+   }
+  },
+  "COMBO_CARRY_MOM": {
+   "sharpe": 0.78,
+   "sharpe_ci95": [
+    -0.39,
+    1.93
+   ],
+   "annual_return": 0.051,
+   "annual_vol": 0.067,
+   "max_dd": -0.041,
+   "by_year_return": {
+    "2025": 0.056,
+    "2026": 0.037
+   }
+  }
+ },
+ "correlations": {
+  "CARRY": {
+   "CARRY": 1.0,
+   "MOM": -0.11,
+   "REGIME": -0.13,
+   "EW_BUYHOLD": -0.12,
+   "BTC_BUYHOLD": -0.12,
+   "COMBO_CARRY_MOM": 0.67
+  },
+  "MOM": {
+   "CARRY": -0.11,
+   "MOM": 1.0,
+   "REGIME": 0.29,
+   "EW_BUYHOLD": -0.14,
+   "BTC_BUYHOLD": -0.16,
+   "COMBO_CARRY_MOM": 0.67
+  },
+  "REGIME": {
+   "CARRY": -0.13,
+   "MOM": 0.29,
+   "REGIME": 1.0,
+   "EW_BUYHOLD": 0.75,
+   "BTC_BUYHOLD": 0.49,
+   "COMBO_CARRY_MOM": 0.12
+  },
+  "EW_BUYHOLD": {
+   "CARRY": -0.12,
+   "MOM": -0.14,
+   "REGIME": 0.75,
+   "EW_BUYHOLD": 1.0,
+   "BTC_BUYHOLD": 0.77,
+   "COMBO_CARRY_MOM": -0.19
+  },
+  "BTC_BUYHOLD": {
+   "CARRY": -0.12,
+   "MOM": -0.16,
+   "REGIME": 0.49,
+   "EW_BUYHOLD": 0.77,
+   "BTC_BUYHOLD": 1.0,
+   "COMBO_CARRY_MOM": -0.21
+  },
+  "COMBO_CARRY_MOM": {
+   "CARRY": 0.67,
+   "MOM": 0.67,
+   "REGIME": 0.12,
+   "EW_BUYHOLD": -0.19,
+   "BTC_BUYHOLD": -0.21,
+   "COMBO_CARRY_MOM": 1.0
+  }
+ },
+ "regime_conditional": {
+  "CARRY": {
+   "bull": {
+    "days": 342,
+    "annual_return": 0.507,
+    "sharpe": 1.43,
+    "t_nw": 1.51
+   },
+   "bear": {
+    "days": 327,
+    "annual_return": -0.387,
+    "sharpe": -0.64,
+    "t_nw": -0.54
+   },
+   "diff_bull_minus_bear_annual": 0.895,
+   "diff_t_nw": 1.09,
+   "by_year_[bull, bear]_annual": {
+    "2025": [
+     0.61,
+     -1.03
+    ],
+    "2026": [
+     0.4,
+     0.53
+    ]
+   }
+  },
+  "MOM": {
+   "bull": {
+    "days": 342,
+    "annual_return": 0.608,
+    "sharpe": 1.48,
+    "t_nw": 1.88
+   },
+   "bear": {
+    "days": 327,
+    "annual_return": 0.37,
+    "sharpe": 0.56,
+    "t_nw": 0.51
+   },
+   "diff_bull_minus_bear_annual": 0.238,
+   "diff_t_nw": 0.28,
+   "by_year_[bull, bear]_annual": {
+    "2025": [
+     0.66,
+     1.11
+    ],
+    "2026": [
+     0.55,
+     -0.69
+    ]
+   }
+  }
+ },
+ "funding_dispersion_annualized": {
+  "bull": 0.817,
+  "bear": 1.335
+ }
+}
