@@ -1,0 +1,54 @@
+{
+ "A_mlp_features": {
+  "bars": 10956,
+  "base_up_rate": 0.525,
+  "always_up_accuracy": 0.525,
+  "accuracy": 0.512,
+  "accuracy_ci95": [
+   0.496,
+   0.527
+  ],
+  "auc": 0.512,
+  "top20pct_confident": {
+   "bars": 2192,
+   "accuracy": 0.534,
+   "ci95": [
+    0.504,
+    0.562
+   ]
+  },
+  "accuracy_by_year": {
+   "2020": 0.503,
+   "2021": 0.505,
+   "2022": 0.48,
+   "2023": 0.525,
+   "2024": 0.546
+  }
+ },
+ "B_mlp_raw_120h": {
+  "bars": 10949,
+  "base_up_rate": 0.525,
+  "always_up_accuracy": 0.525,
+  "accuracy": 0.5,
+  "accuracy_ci95": [
+   0.488,
+   0.512
+  ],
+  "auc": 0.494,
+  "top20pct_confident": {
+   "bars": 2190,
+   "accuracy": 0.511,
+   "ci95": [
+    0.486,
+    0.538
+   ]
+  },
+  "accuracy_by_year": {
+   "2020": 0.515,
+   "2021": 0.507,
+   "2022": 0.483,
+   "2023": 0.5,
+   "2024": 0.493
+  }
+ }
+}
