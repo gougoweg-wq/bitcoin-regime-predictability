@@ -1,0 +1,129 @@
+{
+ "per_year": {
+  "2020": {
+   "best_config": [
+    1,
+    1.0,
+    "gb",
+    "all"
+   ],
+   "inner_auc": 0.5,
+   "test_auc": 0.512,
+   "meta_used": false,
+   "median_test_auc_all_configs": 0.455,
+   "best_test_auc_in_hindsight": 0.526
+  },
+  "2021": {
+   "best_config": [
+    3,
+    1.0,
+    "gb",
+    "all"
+   ],
+   "inner_auc": 0.529,
+   "test_auc": 0.508,
+   "meta_used": true,
+   "median_test_auc_all_configs": 0.52,
+   "best_test_auc_in_hindsight": 0.573
+  },
+  "2022": {
+   "best_config": [
+    10,
+    1.0,
+    "gb",
+    "all"
+   ],
+   "inner_auc": 0.582,
+   "test_auc": 0.353,
+   "meta_used": true,
+   "median_test_auc_all_configs": 0.471,
+   "best_test_auc_in_hindsight": 0.561
+  },
+  "2023": {
+   "best_config": [
+    10,
+    2.0,
+    "lr",
+    "core"
+   ],
+   "inner_auc": 0.562,
+   "test_auc": 0.65,
+   "meta_used": true,
+   "median_test_auc_all_configs": 0.603,
+   "best_test_auc_in_hindsight": 0.692
+  },
+  "2024": {
+   "best_config": [
+    5,
+    1.0,
+    "lr",
+    "core"
+   ],
+   "inner_auc": 0.697,
+   "test_auc": 0.483,
+   "meta_used": true,
+   "median_test_auc_all_configs": 0.491,
+   "best_test_auc_in_hindsight": 0.537
+  }
+ },
+ "strategies": {
+  "primary_ensemble": {
+   "sharpe": 1.599748589068337,
+   "sortino": 1.6831791214710685,
+   "cagr": 0.8702518652861542,
+   "max_dd": -0.47657949850845094,
+   "calmar": 1.826037141777559,
+   "avg_exposure": 0.5942346287173873,
+   "turnover_per_year": 53.54132457580733,
+   "profit_factor": 1.1476446721553801
+  },
+  "meta_nested": {
+   "sharpe": 1.1144322380497704,
+   "sortino": 1.0367774941064565,
+   "cagr": 0.41119215628234707,
+   "max_dd": -0.5000481301266975,
+   "calmar": 0.8223051572618881,
+   "avg_exposure": 0.4277276044517424,
+   "turnover_per_year": 107.3823207443897,
+   "profit_factor": 1.1135446900317159
+  }
+ },
+ "meta_vs_primary": {
+  "ci95": [
+   -1.00385286711044,
+   0.010617133406964177
+  ],
+  "p_better": 0.029
+ },
+ "by_year_sharpe": {
+  "2020": {
+   "primary_ensemble": 3.07,
+   "meta_nested": 3.07
+  },
+  "2021": {
+   "primary_ensemble": 1.38,
+   "meta_nested": -0.05
+  },
+  "2022": {
+   "primary_ensemble": -1.5,
+   "meta_nested": -1.5
+  },
+  "2023": {
+   "primary_ensemble": 2.43,
+   "meta_nested": 2.33
+  },
+  "2024": {
+   "primary_ensemble": 1.65,
+   "meta_nested": 0.91
+  }
+ },
+ "n_configs": 32,
+ "all_configs_test_auc": {
+  "mean": 0.49722769709577574,
+  "share_above_0.5": 0.51875
+ },
+ "spearman_inner_vs_test_auc": {
+  "rho": -0.24951930402703676,
+  "p": 0.0014629500943616014
+ }
+}
