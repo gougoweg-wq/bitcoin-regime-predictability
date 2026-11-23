@@ -1,0 +1,386 @@
+{
+ "1_regime_vs_buyhold": {
+  "days": 669,
+  "regime": {
+   "sharpe": 0.51,
+   "sharpe_ci95": [
+    -1.051,
+    1.868
+   ],
+   "cagr": 0.104,
+   "max_dd": -0.255,
+   "total_return": 0.198
+  },
+  "buyhold": {
+   "sharpe": -0.02,
+   "sharpe_ci95": [
+    -1.335,
+    1.408
+   ],
+   "cagr": -0.097,
+   "max_dd": -0.53,
+   "total_return": -0.171
+  },
+  "time_in_market": 0.51,
+  "sharpe_diff_ci95": [
+   -0.599,
+   1.541
+  ]
+ },
+ "2_next_day_bull_minus_bear": {
+  "mu_bull_pct": 0.066,
+  "mu_bear_pct": -0.13,
+  "days_bull": 342,
+  "days_bear": 326,
+  "t_bull": 0.62,
+  "t_bear": -1.04
+ },
+ "12_paper_z_momentum": {
+  "events": 25,
+  "accuracy": 0.44,
+  "always_long_accuracy": 0.6,
+  "base_up_rate_5d": 0.488
+ },
+ "3_bayes_formula": {
+  "days": 668,
+  "base_up_rate": 0.49,
+  "cells": {
+   "bear|high": {
+    "days": 125,
+    "up_rate": 0.464,
+    "mean_next_pct": -0.096,
+    "t": -0.52
+   },
+   "bear|low": {
+    "days": 100,
+    "up_rate": 0.5,
+    "mean_next_pct": 0.122,
+    "t": 0.5
+   },
+   "bear|mid": {
+    "days": 101,
+    "up_rate": 0.475,
+    "mean_next_pct": -0.42,
+    "t": -1.89
+   },
+   "bull|high": {
+    "days": 44,
+    "up_rate": 0.455,
+    "mean_next_pct": -0.228,
+    "t": -0.91
+   },
+   "bull|low": {
+    "days": 203,
+    "up_rate": 0.483,
+    "mean_next_pct": -0.034,
+    "t": -0.28
+   },
+   "bull|mid": {
+    "days": 95,
+    "up_rate": 0.558,
+    "mean_next_pct": 0.414,
+    "t": 2.72
+   }
+  },
+  "p_up>0.55": {
+   "days": 95,
+   "accuracy": 0.558,
+   "ci95": [
+    0.484,
+    0.632
+   ]
+  },
+  "brier_bayes": 0.2512,
+  "brier_const_0.53": 0.2515
+ },
+ "4_vol_forecast": {
+  "h1": {
+   "days": 668,
+   "accuracy": 0.576,
+   "ci95": [
+    0.537,
+    0.617
+   ],
+   "share_high_actual": 0.472,
+   "by_year": {
+    "2025": 0.58,
+    "2026": 0.57
+   }
+  },
+  "h5": {
+   "days": 664,
+   "accuracy": 0.627,
+   "ci95": [
+    0.563,
+    0.688
+   ],
+   "share_high_actual": 0.437,
+   "by_year": {
+    "2025": 0.66,
+    "2026": 0.59
+   }
+  },
+  "h10": {
+   "days": 659,
+   "accuracy": 0.646,
+   "ci95": [
+    0.557,
+    0.739
+   ],
+   "share_high_actual": 0.378,
+   "by_year": {
+    "2025": 0.67,
+    "2026": 0.62
+   }
+  },
+  "h20": {
+   "days": 649,
+   "accuracy": 0.644,
+   "ci95": [
+    0.529,
+    0.76
+   ],
+   "share_high_actual": 0.427,
+   "by_year": {
+    "2025": 0.69,
+    "2026": 0.58
+   }
+  }
+ },
+ "5_nn_daily": {
+  "2_layers_64_32": {
+   "forecasts": 668,
+   "always_up_accuracy": 0.51,
+   "accuracy": 0.488,
+   "ci95": [
+    0.458,
+    0.521
+   ],
+   "auc": 0.507,
+   "top20pct_confident_accuracy": 0.5,
+   "top20pct_ci95": [
+    0.425,
+    0.575
+   ],
+   "share_predicted_up": 0.702,
+   "accuracy_by_year": {
+    "2025": 0.468,
+    "2026": 0.512
+   }
+  },
+  "3_layers_64_32_16": {
+   "forecasts": 668,
+   "always_up_accuracy": 0.51,
+   "accuracy": 0.482,
+   "ci95": [
+    0.448,
+    0.513
+   ],
+   "auc": 0.47,
+   "top20pct_confident_accuracy": 0.433,
+   "top20pct_ci95": [
+    0.373,
+    0.5
+   ],
+   "share_predicted_up": 0.72,
+   "accuracy_by_year": {
+    "2025": 0.49,
+    "2026": 0.472
+   }
+  }
+ },
+ "6_funding_level_forecast": {
+  "prints": 2007,
+  "accuracy": 0.788,
+  "ci95": [
+   0.749,
+   0.831
+  ],
+  "share_above_actual": 0.366,
+  "always_majority_accuracy": 0.634,
+  "funding_annualized": 0.0422,
+  "share_positive": 0.816
+ },
+ "7_btc_carry": {
+  "days": 669,
+  "annual_return": 0.0286,
+  "annual_vol": 0.0022,
+  "max_dd": -0.0028,
+  "by_year": {
+   "2025": 0.0348,
+   "2026": 0.0176
+  }
+ },
+ "8_9_10_breadth": {
+  "universe": {
+   "symbols_total": 913,
+   "ever_in_top30": 156,
+   "avg_names_per_day": 30.0
+  },
+  "strategies": {
+   "CARRY": {
+    "sharpe": 0.14,
+    "sharpe_ci95": [
+     -1.39,
+     1.75
+    ],
+    "annual_return": -0.053,
+    "annual_vol": 0.492,
+    "max_dd": -0.583,
+    "by_year_return": {
+     "2025": -0.302,
+     "2026": 0.298
+    },
+    "funding_part_annual": 0.384,
+    "turnover_per_year": 53.9
+   },
+   "MOM": {
+    "sharpe": 0.9,
+    "sharpe_ci95": [
+     -0.32,
+     2.24
+    ],
+    "annual_return": 0.406,
+    "annual_vol": 0.546,
+    "max_dd": -0.43,
+    "by_year_return": {
+     "2025": 1.211,
+     "2026": -0.155
+    },
+    "funding_part_annual": 0.258,
+    "turnover_per_year": 46.6
+   },
+   "REGIME": {
+    "sharpe": 0.1,
+    "sharpe_ci95": [
+     -1.14,
+     1.37
+    ],
+    "annual_return": -0.033,
+    "annual_vol": 0.376,
+    "max_dd": -0.34,
+    "by_year_return": {
+     "2025": -0.036,
+     "2026": -0.024
+    },
+    "funding_part_annual": 0.101,
+    "turnover_per_year": 12.9
+   },
+   "EW_BUYHOLD": {
+    "sharpe": -0.34,
+    "sharpe_ci95": [
+     -1.44,
+     0.89
+    ],
+    "annual_return": -0.423,
+    "annual_vol": 0.761,
+    "max_dd": -0.734,
+    "by_year_return": {
+     "2025": -0.565,
+     "2026": -0.16
+    },
+    "funding_part_annual": 0.133,
+    "turnover_per_year": 8.3
+   },
+   "BTC_BUYHOLD": {
+    "sharpe": -0.12,
+    "sharpe_ci95": [
+     -1.42,
+     1.3
+    ],
+    "annual_return": -0.135,
+    "annual_vol": 0.43,
+    "max_dd": -0.537,
+    "by_year_return": {
+     "2025": -0.11,
+     "2026": -0.138
+    }
+   },
+   "COMBO_CARRY_MOM": {
+    "sharpe": 0.78,
+    "sharpe_ci95": [
+     -0.39,
+     1.93
+    ],
+    "annual_return": 0.051,
+    "annual_vol": 0.067,
+    "max_dd": -0.041,
+    "by_year_return": {
+     "2025": 0.056,
+     "2026": 0.037
+    }
+   }
+  },
+  "regime_conditional": {
+   "CARRY": {
+    "bull": {
+     "days": 342,
+     "annual_return": 0.507,
+     "sharpe": 1.43,
+     "t_nw": 1.51
+    },
+    "bear": {
+     "days": 327,
+     "annual_return": -0.387,
+     "sharpe": -0.64,
+     "t_nw": -0.54
+    },
+    "diff_bull_minus_bear_annual": 0.895,
+    "diff_t_nw": 1.09,
+    "by_year_[bull, bear]_annual": {
+     "2025": [
+      0.61,
+      -1.03
+     ],
+     "2026": [
+      0.4,
+      0.53
+     ]
+    }
+   },
+   "MOM": {
+    "bull": {
+     "days": 342,
+     "annual_return": 0.608,
+     "sharpe": 1.48,
+     "t_nw": 1.88
+    },
+    "bear": {
+     "days": 327,
+     "annual_return": 0.37,
+     "sharpe": 0.56,
+     "t_nw": 0.51
+    },
+    "diff_bull_minus_bear_annual": 0.238,
+    "diff_t_nw": 0.28,
+    "by_year_[bull, bear]_annual": {
+     "2025": [
+      0.66,
+      1.11
+     ],
+     "2026": [
+      0.55,
+      -0.69
+     ]
+    }
+   }
+  },
+  "funding_dispersion_annualized": {
+   "bull": 0.817,
+   "bear": 1.335
+  }
+ },
+ "11_flush": {
+  "events": 126,
+  "oi_fell": {
+   "n": 38,
+   "up_rate": 0.474,
+   "mean_fwd_pct": -1.31
+  },
+  "oi_rose": {
+   "n": 44,
+   "up_rate": 0.432,
+   "mean_fwd_pct": -1.09
+  }
+ }
+}
