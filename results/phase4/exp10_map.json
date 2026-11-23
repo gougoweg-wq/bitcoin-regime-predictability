@@ -1,0 +1,312 @@
+{
+ "yahoo": {
+  "all": {
+   "bull|low": {
+    "days": 716,
+    "up_rate": 0.539,
+    "p_vs_50": 0.0398,
+    "mean_next_pct": 0.246,
+    "t_nw": 2.15,
+    "sharpe_ann": 1.76
+   },
+   "bull|mid": {
+    "days": 645,
+    "up_rate": 0.563,
+    "p_vs_50": 0.0016,
+    "mean_next_pct": 0.475,
+    "t_nw": 3.48,
+    "sharpe_ann": 2.77
+   },
+   "bull|high": {
+    "days": 721,
+    "up_rate": 0.544,
+    "p_vs_50": 0.0209,
+    "mean_next_pct": 0.24,
+    "t_nw": 1.57,
+    "sharpe_ann": 1.1
+   },
+   "bear|low": {
+    "days": 606,
+    "up_rate": 0.5,
+    "p_vs_50": 1.0,
+    "mean_next_pct": -0.183,
+    "t_nw": -1.59,
+    "sharpe_ann": -1.18
+   },
+   "bear|mid": {
+    "days": 384,
+    "up_rate": 0.503,
+    "p_vs_50": 0.9593,
+    "mean_next_pct": -0.135,
+    "t_nw": -0.64,
+    "sharpe_ann": -0.64
+   },
+   "bear|high": {
+    "days": 477,
+    "up_rate": 0.524,
+    "p_vs_50": 0.3138,
+    "mean_next_pct": 0.235,
+    "t_nw": 1.22,
+    "sharpe_ann": 0.98
+   }
+  },
+  "train_to_2021": {
+   "bull|low": {
+    "days": 486,
+    "up_rate": 0.572,
+    "p_vs_50": 0.0017,
+    "mean_next_pct": 0.314,
+    "t_nw": 2.29,
+    "sharpe_ann": 2.23
+   },
+   "bull|mid": {
+    "days": 499,
+    "up_rate": 0.579,
+    "p_vs_50": 0.0005,
+    "mean_next_pct": 0.539,
+    "t_nw": 3.26,
+    "sharpe_ann": 2.94
+   },
+   "bull|high": {
+    "days": 523,
+    "up_rate": 0.551,
+    "p_vs_50": 0.0229,
+    "mean_next_pct": 0.293,
+    "t_nw": 1.47,
+    "sharpe_ann": 1.23
+   },
+   "bear|low": {
+    "days": 374,
+    "up_rate": 0.524,
+    "p_vs_50": 0.3794,
+    "mean_next_pct": -0.111,
+    "t_nw": -0.7,
+    "sharpe_ann": -0.69
+   },
+   "bear|mid": {
+    "days": 273,
+    "up_rate": 0.498,
+    "p_vs_50": 1.0,
+    "mean_next_pct": -0.319,
+    "t_nw": -1.26,
+    "sharpe_ann": -1.45
+   },
+   "bear|high": {
+    "days": 299,
+    "up_rate": 0.528,
+    "p_vs_50": 0.3548,
+    "mean_next_pct": 0.309,
+    "t_nw": 1.06,
+    "sharpe_ann": 1.12
+   }
+  },
+  "test_2022_2024": {
+   "bull|low": {
+    "days": 230,
+    "up_rate": 0.47,
+    "p_vs_50": 0.3914,
+    "mean_next_pct": 0.104,
+    "t_nw": 0.51,
+    "sharpe_ann": 0.75
+   },
+   "bull|mid": {
+    "days": 146,
+    "up_rate": 0.507,
+    "p_vs_50": 0.9341,
+    "mean_next_pct": 0.258,
+    "t_nw": 1.25,
+    "sharpe_ann": 2.07
+   },
+   "bull|high": {
+    "days": 198,
+    "up_rate": 0.525,
+    "p_vs_50": 0.5225,
+    "mean_next_pct": 0.103,
+    "t_nw": 0.56,
+    "sharpe_ann": 0.69
+   },
+   "bear|low": {
+    "days": 232,
+    "up_rate": 0.461,
+    "p_vs_50": 0.2643,
+    "mean_next_pct": -0.3,
+    "t_nw": -1.84,
+    "sharpe_ann": -2.09
+   },
+   "bear|mid": {
+    "days": 111,
+    "up_rate": 0.514,
+    "p_vs_50": 0.8496,
+    "mean_next_pct": 0.317,
+    "t_nw": 0.88,
+    "sharpe_ann": 1.73
+   },
+   "bear|high": {
+    "days": 178,
+    "up_rate": 0.517,
+    "p_vs_50": 0.7079,
+    "mean_next_pct": 0.111,
+    "t_nw": 0.66,
+    "sharpe_ann": 0.69
+   }
+  },
+  "base_up_rate": 0.532,
+  "n": 3549,
+  "from": "2015-04-14"
+ },
+ "binance": {
+  "all": {
+   "bull|low": {
+    "days": 499,
+    "up_rate": 0.481,
+    "p_vs_50": 0.4204,
+    "mean_next_pct": 0.115,
+    "t_nw": 0.77,
+    "sharpe_ann": 0.75
+   },
+   "bull|mid": {
+    "days": 409,
+    "up_rate": 0.538,
+    "p_vs_50": 0.1379,
+    "mean_next_pct": 0.38,
+    "t_nw": 2.72,
+    "sharpe_ann": 2.4
+   },
+   "bull|high": {
+    "days": 408,
+    "up_rate": 0.539,
+    "p_vs_50": 0.1247,
+    "mean_next_pct": 0.288,
+    "t_nw": 1.54,
+    "sharpe_ann": 1.44
+   },
+   "bear|low": {
+    "days": 536,
+    "up_rate": 0.502,
+    "p_vs_50": 0.9656,
+    "mean_next_pct": -0.18,
+    "t_nw": -1.34,
+    "sharpe_ann": -1.09
+   },
+   "bear|mid": {
+    "days": 316,
+    "up_rate": 0.509,
+    "p_vs_50": 0.7786,
+    "mean_next_pct": -0.026,
+    "t_nw": -0.11,
+    "sharpe_ann": -0.12
+   },
+   "bear|high": {
+    "days": 316,
+    "up_rate": 0.516,
+    "p_vs_50": 0.6127,
+    "mean_next_pct": 0.059,
+    "t_nw": 0.31,
+    "sharpe_ann": 0.28
+   }
+  },
+  "train_to_2021": {
+   "bull|low": {
+    "days": 261,
+    "up_rate": 0.494,
+    "p_vs_50": 0.9015,
+    "mean_next_pct": 0.116,
+    "t_nw": 0.53,
+    "sharpe_ann": 0.7
+   },
+   "bull|mid": {
+    "days": 266,
+    "up_rate": 0.556,
+    "p_vs_50": 0.0752,
+    "mean_next_pct": 0.482,
+    "t_nw": 2.68,
+    "sharpe_ann": 2.8
+   },
+   "bull|high": {
+    "days": 215,
+    "up_rate": 0.549,
+    "p_vs_50": 0.1724,
+    "mean_next_pct": 0.421,
+    "t_nw": 1.38,
+    "sharpe_ann": 1.79
+   },
+   "bear|low": {
+    "days": 301,
+    "up_rate": 0.528,
+    "p_vs_50": 0.3564,
+    "mean_next_pct": -0.091,
+    "t_nw": -0.45,
+    "sharpe_ann": -0.5
+   },
+   "bear|mid": {
+    "days": 207,
+    "up_rate": 0.507,
+    "p_vs_50": 0.8895,
+    "mean_next_pct": -0.211,
+    "t_nw": -0.69,
+    "sharpe_ann": -0.86
+   },
+   "bear|high": {
+    "days": 139,
+    "up_rate": 0.518,
+    "p_vs_50": 0.7345,
+    "mean_next_pct": -0.01,
+    "t_nw": -0.03,
+    "sharpe_ann": -0.04
+   }
+  },
+  "test_2022_2024": {
+   "bull|low": {
+    "days": 238,
+    "up_rate": 0.466,
+    "p_vs_50": 0.3309,
+    "mean_next_pct": 0.113,
+    "t_nw": 0.57,
+    "sharpe_ann": 0.83
+   },
+   "bull|mid": {
+    "days": 143,
+    "up_rate": 0.503,
+    "p_vs_50": 1.0,
+    "mean_next_pct": 0.191,
+    "t_nw": 0.9,
+    "sharpe_ann": 1.47
+   },
+   "bull|high": {
+    "days": 193,
+    "up_rate": 0.528,
+    "p_vs_50": 0.4717,
+    "mean_next_pct": 0.14,
+    "t_nw": 0.72,
+    "sharpe_ann": 0.93
+   },
+   "bear|low": {
+    "days": 235,
+    "up_rate": 0.468,
+    "p_vs_50": 0.3611,
+    "mean_next_pct": -0.295,
+    "t_nw": -1.81,
+    "sharpe_ann": -2.05
+   },
+   "bear|mid": {
+    "days": 109,
+    "up_rate": 0.514,
+    "p_vs_50": 0.8482,
+    "mean_next_pct": 0.323,
+    "t_nw": 0.92,
+    "sharpe_ann": 1.75
+   },
+   "bear|high": {
+    "days": 177,
+    "up_rate": 0.514,
+    "p_vs_50": 0.7638,
+    "mean_next_pct": 0.113,
+    "t_nw": 0.65,
+    "sharpe_ann": 0.71
+   }
+  },
+  "base_up_rate": 0.512,
+  "n": 2484,
+  "from": "2018-03-14"
+ }
+}
