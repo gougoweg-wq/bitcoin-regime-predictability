@@ -1,0 +1,97 @@
+{
+ "funding": {
+  "prints": 5481,
+  "from": "2020-01-01 00:00:00",
+  "mean_per_8h": 0.0001310630578361613,
+  "annualized_mean": 0.1435140483305966,
+  "share_positive": 0.8755701514322204,
+  "autocorr_lag1": 0.7930700834122368,
+  "autocorr_lag9": 0.6050895464873876,
+  "by_regime_annualized": {
+   "bull": 0.21680624099229287,
+   "bear": 0.04709161996197719
+  }
+ },
+ "forecast_sign_of_next_funding": {
+  "rule": "\u0437\u043d\u0430\u043a \u0441\u0440\u0435\u0434\u043d\u0435\u0433\u043e \u0437\u0430 3 \u0434\u043d\u044f",
+  "accuracy": 0.883,
+  "always_positive_accuracy": 0.876,
+  "accuracy_by_year": {
+   "2020": 0.887,
+   "2021": 0.927,
+   "2022": 0.779,
+   "2023": 0.888,
+   "2024": 0.935
+  }
+ },
+ "forecast_funding_above_1y_median": {
+  "accuracy": 0.84,
+  "share_above_actual": 0.332,
+  "accuracy_by_year": {
+   "2020": 0.832,
+   "2021": 0.793,
+   "2022": 0.926,
+   "2023": 0.763,
+   "2024": 0.884
+  }
+ },
+ "strategies": {
+  "A_always": {
+   "annual_return": 0.1002,
+   "annual_vol": 0.0052,
+   "sharpe_funding_only": 18.24,
+   "sharpe_ci95": [
+    15.29,
+    21.51
+   ],
+   "max_dd": -0.0101,
+   "time_in_position": 1.0,
+   "switches_per_year": 0.0,
+   "by_year_return": {
+    "2020": 0.1206,
+    "2021": 0.2263,
+    "2022": 0.0282,
+    "2023": 0.0538,
+    "2024": 0.083
+   }
+  },
+  "B_trailing_positive": {
+   "annual_return": 0.0817,
+   "annual_vol": 0.0069,
+   "sharpe_funding_only": 11.36,
+   "sharpe_ci95": [
+    7.31,
+    15.36
+   ],
+   "max_dd": -0.0144,
+   "time_in_position": 0.906,
+   "switches_per_year": 19.4,
+   "by_year_return": {
+    "2020": 0.1022,
+    "2021": 0.2096,
+    "2022": -0.0048,
+    "2023": 0.0347,
+    "2024": 0.0794
+   }
+  },
+  "C_trailing_positive_and_bull": {
+   "annual_return": 0.0659,
+   "annual_vol": 0.0067,
+   "sharpe_funding_only": 9.52,
+   "sharpe_ci95": [
+    5.92,
+    13.04
+   ],
+   "max_dd": -0.0138,
+   "time_in_position": 0.548,
+   "switches_per_year": 18.4,
+   "by_year_return": {
+    "2020": 0.0966,
+    "2021": 0.1792,
+    "2022": -0.0119,
+    "2023": 0.0255,
+    "2024": 0.0501
+   }
+  }
+ }
+}
