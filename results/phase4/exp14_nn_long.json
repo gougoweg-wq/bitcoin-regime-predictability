@@ -1,0 +1,104 @@
+{
+ "daily_from_2014": {
+  "2_layers_64_32": {
+   "forecasts": 2921,
+   "always_up_accuracy": 0.526,
+   "accuracy": 0.526,
+   "ci95": [
+    0.507,
+    0.545
+   ],
+   "auc": 0.527,
+   "top20pct_confident_accuracy": 0.559,
+   "top20pct_ci95": [
+    0.52,
+    0.6
+   ],
+   "share_predicted_up": 0.799,
+   "accuracy_by_year": {
+    "2017": 0.578,
+    "2018": 0.466,
+    "2019": 0.515,
+    "2020": 0.563,
+    "2021": 0.51,
+    "2022": 0.529,
+    "2023": 0.532,
+    "2024": 0.515
+   }
+  },
+  "3_layers_64_32_16": {
+   "forecasts": 2921,
+   "always_up_accuracy": 0.526,
+   "accuracy": 0.52,
+   "ci95": [
+    0.502,
+    0.538
+   ],
+   "auc": 0.523,
+   "top20pct_confident_accuracy": 0.568,
+   "top20pct_ci95": [
+    0.528,
+    0.609
+   ],
+   "share_predicted_up": 0.814,
+   "accuracy_by_year": {
+    "2017": 0.562,
+    "2018": 0.49,
+    "2019": 0.515,
+    "2020": 0.546,
+    "2021": 0.512,
+    "2022": 0.485,
+    "2023": 0.529,
+    "2024": 0.518
+   }
+  }
+ },
+ "4h_from_2017": {
+  "2_layers_64_32": {
+   "forecasts": 10956,
+   "always_up_accuracy": 0.525,
+   "accuracy": 0.509,
+   "ci95": [
+    0.494,
+    0.525
+   ],
+   "auc": 0.508,
+   "top20pct_confident_accuracy": 0.52,
+   "top20pct_ci95": [
+    0.489,
+    0.55
+   ],
+   "share_predicted_up": 0.56,
+   "accuracy_by_year": {
+    "2020": 0.498,
+    "2021": 0.502,
+    "2022": 0.475,
+    "2023": 0.527,
+    "2024": 0.542
+   }
+  },
+  "3_layers_64_32_16": {
+   "forecasts": 10956,
+   "always_up_accuracy": 0.525,
+   "accuracy": 0.511,
+   "ci95": [
+    0.495,
+    0.527
+   ],
+   "auc": 0.507,
+   "top20pct_confident_accuracy": 0.517,
+   "top20pct_ci95": [
+    0.486,
+    0.547
+   ],
+   "share_predicted_up": 0.563,
+   "accuracy_by_year": {
+    "2020": 0.524,
+    "2021": 0.486,
+    "2022": 0.493,
+    "2023": 0.516,
+    "2024": 0.538
+   }
+  }
+ }
+}
