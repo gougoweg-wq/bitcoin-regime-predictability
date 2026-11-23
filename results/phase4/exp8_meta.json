@@ -1,0 +1,165 @@
+{
+ "period": "2020-01-01..2024-12-31",
+ "cost_bps": 10,
+ "strategies": {
+  "buyhold": {
+   "sharpe": 1.1259999068258117,
+   "sortino": 1.4127299384127603,
+   "cagr": 0.6704929267190982,
+   "max_dd": -0.7704339319608697,
+   "calmar": 0.870279590376547,
+   "avg_exposure": 1.0,
+   "turnover_per_year": 0.0,
+   "profit_factor": 1.0794756527793268
+  },
+  "regime_sma50_daily": {
+   "sharpe": 1.5476892432606177,
+   "sortino": 1.553478569423503,
+   "cagr": 0.8190515259043403,
+   "max_dd": -0.5907827379450836,
+   "calmar": 1.3863836454552527,
+   "avg_exposure": 0.5680532749498267,
+   "turnover_per_year": 17.181171319102354,
+   "profit_factor": 1.1457632225902386
+  },
+  "primary_ensemble": {
+   "sharpe": 1.599748589068337,
+   "sortino": 1.6831791214710685,
+   "cagr": 0.8702518652861542,
+   "max_dd": -0.47657949850845094,
+   "calmar": 1.826037141777559,
+   "avg_exposure": 0.5942346287173873,
+   "turnover_per_year": 53.54132457580733,
+   "profit_factor": 1.1476446721553801
+  },
+  "meta": {
+   "sharpe": 1.084927028589382,
+   "sortino": 0.9294853846266048,
+   "cagr": 0.3250789724736556,
+   "max_dd": -0.3855660632894854,
+   "calmar": 0.843121331011916,
+   "avg_exposure": 0.3355227148330597,
+   "turnover_per_year": 96.19458128078819,
+   "profit_factor": 1.1250178896843668
+  }
+ },
+ "meta_vs_primary": {
+  "ci95": [
+   -1.1900969941743966,
+   0.12900549277546947
+  ],
+  "p_better": 0.0585
+ },
+ "meta_vs_regime_sma50": {
+  "ci95": [
+   -1.1395291917439825,
+   0.1958707018589452
+  ],
+  "p_better": 0.094
+ },
+ "primary_vs_regime_sma50": {
+  "ci95": [
+   -0.2604182519954926,
+   0.383203887043473
+  ],
+  "p_better": 0.625
+ },
+ "by_year_sharpe": {
+  "2020": {
+   "buyhold": 2.43,
+   "regime_sma50_daily": 3.23,
+   "primary_ensemble": 3.07,
+   "meta": 1.7
+  },
+  "2021": {
+   "buyhold": 0.96,
+   "regime_sma50_daily": 1.57,
+   "primary_ensemble": 1.38,
+   "meta": 1.63
+  },
+  "2022": {
+   "buyhold": -1.35,
+   "regime_sma50_daily": -2.54,
+   "primary_ensemble": -1.5,
+   "meta": -1.5
+  },
+  "2023": {
+   "buyhold": 2.46,
+   "regime_sma50_daily": 2.65,
+   "primary_ensemble": 2.43,
+   "meta": 2.11
+  },
+  "2024": {
+   "buyhold": 1.78,
+   "regime_sma50_daily": 1.58,
+   "primary_ensemble": 1.65,
+   "meta": 0.72
+  }
+ },
+ "classifier_oos": {
+  "n": 6511,
+  "base_rate": 0.5493779757333743,
+  "auc": 0.4926068026448611,
+  "logloss": 0.7725035863359714,
+  "logloss_constant": 0.6882628541762117,
+  "auc_by_year": {
+   "2020": {
+    "train_n": 1526,
+    "test_n": 1633,
+    "auc_ens": 0.433,
+    "auc_gb": 0.468,
+    "auc_lr": 0.397
+   },
+   "2021": {
+    "train_n": 3099,
+    "test_n": 1391,
+    "auc_ens": 0.516,
+    "auc_gb": 0.533,
+    "auc_lr": 0.493
+   },
+   "2022": {
+    "train_n": 4515,
+    "test_n": 408,
+    "auc_ens": 0.341,
+    "auc_gb": 0.354,
+    "auc_lr": 0.47
+   },
+   "2023": {
+    "train_n": 4958,
+    "test_n": 1572,
+    "auc_ens": 0.639,
+    "auc_gb": 0.619,
+    "auc_lr": 0.659
+   },
+   "2024": {
+    "train_n": 6470,
+    "test_n": 1507,
+    "auc_ens": 0.501,
+    "auc_gb": 0.505,
+    "auc_lr": 0.487
+   }
+  },
+  "hit_rate_by_proba_bucket": {
+   "0-0.45": {
+    "n": 1717,
+    "label_rate": 0.55
+   },
+   "0.45-0.5": {
+    "n": 547,
+    "label_rate": 0.59
+   },
+   "0.5-0.55": {
+    "n": 557,
+    "label_rate": 0.551
+   },
+   "0.55-0.6": {
+    "n": 592,
+    "label_rate": 0.547
+   },
+   "0.6-1": {
+    "n": 3098,
+    "label_rate": 0.542
+   }
+  }
+ }
+}
