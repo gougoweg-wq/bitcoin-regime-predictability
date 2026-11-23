@@ -1,0 +1,463 @@
+{
+ "1_leakage": {
+  "regime_mu_same_day_bull_bear": [
+   0.00711,
+   -0.00533
+  ],
+  "regime_mu_next_day_bull_bear": [
+   0.00335,
+   -0.00065
+  ],
+  "regime_sharpe_fill_same_close": 1.57141,
+  "regime_sharpe_fill_next_close": 1.5027,
+  "zmom_sharpe_fill_same_close": 0.33817,
+  "zmom_sharpe_fill_next_close": 0.33937,
+  "yahoo_vs_binance_close_absdiff_bps": {
+   "median": 11.23639,
+   "p99": 276.71815,
+   "max": 1052.03022
+  }
+ },
+ "2_validation": {
+  "paper_split_fixed_params": {
+   "train_2017_2021": {
+    "N": 82,
+    "acc": 0.60976,
+    "always_long": 0.67073
+   },
+   "test_2022_2024": {
+    "N": 51,
+    "acc": 0.5098,
+    "always_long": 0.66667,
+    "p_vs_50": 0.5
+   }
+  },
+  "walk_forward_param_selection": {
+   "picks": {
+    "2020": {
+     "w_lam_h": [
+      50,
+      2.5,
+      10
+     ],
+     "train_acc": 0.82192,
+     "test_acc": 0.66667,
+     "test_N": 33
+    },
+    "2021": {
+     "w_lam_h": [
+      50,
+      2.5,
+      10
+     ],
+     "train_acc": 0.77358,
+     "test_acc": 0.69565,
+     "test_N": 23
+    },
+    "2022": {
+     "w_lam_h": [
+      50,
+      2.5,
+      10
+     ],
+     "train_acc": 0.76515,
+     "test_acc": 0.27273,
+     "test_N": 11
+    },
+    "2023": {
+     "w_lam_h": [
+      50,
+      2.5,
+      10
+     ],
+     "train_acc": 0.72727,
+     "test_acc": 0.81579,
+     "test_N": 38
+    },
+    "2024": {
+     "w_lam_h": [
+      50,
+      3.0,
+      10
+     ],
+     "train_acc": 0.75806,
+     "test_acc": 0.83333,
+     "test_N": 6
+    }
+   },
+   "oos_acc": 0.69369,
+   "oos_N": 111,
+   "oos_always_long": 0.74775,
+   "p_vs_50": 3e-05
+  }
+ },
+ "3_overfitting": {
+  "zmom": {
+   "n_configs": 264,
+   "sharpe_paper_config": 0.33817,
+   "sharpe_best_in_grid": 1.20794,
+   "best_config": [
+    50.0,
+    1.5,
+    1.0
+   ],
+   "share_configs_sharpe_gt0": 0.95076,
+   "expected_max_sharpe_if_no_edge": 0.932,
+   "PSR_vs_0": 0.82464,
+   "DSR": 0.05068,
+   "DSR_of_best": 0.79247,
+   "PBO": 0.68254,
+   "MinTRL_years_vs_0": 24.69444
+  },
+  "regime": {
+   "n_configs": 20,
+   "sharpe_sma50": 1.57141,
+   "sharpe_by_window": {
+    "10": 1.28736,
+    "20": 1.37186,
+    "30": 1.3827,
+    "40": 1.57538,
+    "50": 1.45337,
+    "60": 1.3524,
+    "70": 1.3043,
+    "80": 1.30328,
+    "90": 1.33244,
+    "100": 1.39853,
+    "110": 1.58477,
+    "120": 1.55317,
+    "130": 1.47951,
+    "140": 1.4703,
+    "150": 1.41134,
+    "160": 1.31272,
+    "170": 1.32631,
+    "180": 1.19138,
+    "190": 1.1831,
+    "200": 1.12577
+   },
+   "expected_max_sharpe_if_no_edge": 0.23984,
+   "PSR_vs_0": 1.0,
+   "DSR": 0.99993,
+   "PSR_vs_buyhold_sharpe": 0.88446,
+   "PBO": 0.46032,
+   "MinTRL_years_vs_0": 1.05587,
+   "MinTRL_years_vs_buyhold": 14.84112
+  }
+ },
+ "4_costs": {
+  "regime_sharpe_by_cost_bps": {
+   "0": 1.57141,
+   "5": 1.55434,
+   "10": 1.53724,
+   "20": 1.50298,
+   "30": 1.46865,
+   "50": 1.3998,
+   "100": 1.22683
+  },
+  "regime_cagr_by_cost_bps": {
+   "0": 0.96698,
+   "5": 0.94992,
+   "10": 0.93299,
+   "20": 0.89955,
+   "30": 0.86666,
+   "50": 0.80248,
+   "100": 0.651
+  },
+  "zmom_sharpe_by_cost_bps": {
+   "0": 0.33817,
+   "5": 0.3077,
+   "10": 0.27722,
+   "20": 0.21624,
+   "30": 0.15526,
+   "50": 0.03336,
+   "100": -0.27015
+  },
+  "regime_trades_per_year": 17.40515,
+  "zmom_turnover_per_year": 6.48777,
+  "regime_breakeven_bps_vs_zero": 463.95294,
+  "regime_breakeven_bps_vs_buyhold_sharpe": 120,
+  "zmom_breakeven_bps_vs_zero": 55.47862,
+  "binance_btcusdt_median_daily_volume_usd_2023_24": 1677740616.32874,
+  "sqrt_law_order_usd_for_5bps_impact": 295174.79909,
+  "sqrt_law_order_usd_for_20bps_impact": 4722796.78538
+ },
+ "5_robustness": {
+  "by_year": {
+   "2017": {
+    "buyhold_ret": 12.50969,
+    "regime_ret": 6.46598,
+    "buyhold_sharpe": 3.5794,
+    "regime_sharpe": 3.16659,
+    "next_day_mu_bull_minus_bear": -0.00767,
+    "zmom_ret": -0.0988,
+    "z_events_N": 18,
+    "z_acc": 0.55556
+   },
+   "2018": {
+    "buyhold_ret": -0.73562,
+    "regime_ret": -0.3501,
+    "buyhold_sharpe": -1.22886,
+    "regime_sharpe": -1.05713,
+    "next_day_mu_bull_minus_bear": -0.0018,
+    "zmom_ret": 0.11885,
+    "z_events_N": 15,
+    "z_acc": 0.66667
+   },
+   "2019": {
+    "buyhold_ret": 0.92203,
+    "regime_ret": 0.88716,
+    "buyhold_sharpe": 1.29642,
+    "regime_sharpe": 1.41181,
+    "next_day_mu_bull_minus_bear": 0.00332,
+    "zmom_ret": -0.04026,
+    "z_events_N": 21,
+    "z_acc": 0.47619
+   },
+   "2020": {
+    "buyhold_ret": 3.0316,
+    "regime_ret": 3.28424,
+    "buyhold_sharpe": 2.32141,
+    "regime_sharpe": 3.18906,
+    "next_day_mu_bull_minus_bear": 0.00642,
+    "zmom_ret": 0.10982,
+    "z_events_N": 20,
+    "z_acc": 0.7
+   },
+   "2021": {
+    "buyhold_ret": 0.59668,
+    "regime_ret": 1.30511,
+    "buyhold_sharpe": 0.98252,
+    "regime_sharpe": 1.69601,
+    "next_day_mu_bull_minus_bear": 0.00607,
+    "zmom_ret": 0.03102,
+    "z_events_N": 8,
+    "z_acc": 0.75
+   },
+   "2022": {
+    "buyhold_ret": -0.64265,
+    "regime_ret": -0.47903,
+    "buyhold_sharpe": -1.29644,
+    "regime_sharpe": -2.14617,
+    "next_day_mu_bull_minus_bear": -0.00643,
+    "zmom_ret": 0.04305,
+    "z_events_N": 13,
+    "z_acc": 0.38462
+   },
+   "2023": {
+    "buyhold_ret": 1.55417,
+    "regime_ret": 1.41839,
+    "buyhold_sharpe": 2.3605,
+    "regime_sharpe": 2.58903,
+    "next_day_mu_bull_minus_bear": 0.00329,
+    "zmom_ret": 0.11463,
+    "z_events_N": 27,
+    "z_acc": 0.59259
+   },
+   "2024": {
+    "buyhold_ret": 1.21055,
+    "regime_ret": 0.79934,
+    "buyhold_sharpe": 1.74322,
+    "regime_sharpe": 1.56136,
+    "next_day_mu_bull_minus_bear": 0.00057,
+    "zmom_ret": -0.01173,
+    "z_events_N": 11,
+    "z_acc": 0.45455
+   }
+  },
+  "by_vol_tercile": {
+   "low_vol": {
+    "regime_sharpe": 2.10475,
+    "buyhold_sharpe": 1.25517
+   },
+   "mid_vol": {
+    "regime_sharpe": 1.4138,
+    "buyhold_sharpe": 0.80928
+   },
+   "high_vol": {
+    "regime_sharpe": 1.40499,
+    "buyhold_sharpe": 1.43209
+   }
+  },
+  "by_asset": {
+   "btc_yahoo": {
+    "from": "2017-01-01",
+    "buyhold_sharpe": 1.15848,
+    "regime_sharpe": 1.57141,
+    "buyhold_maxdd": -0.83399,
+    "regime_maxdd": -0.57416,
+    "zmom_sharpe": 0.33817,
+    "z_N": 133,
+    "z_acc": 0.57143,
+    "z_always_long": 0.66917
+   },
+   "btc_binance": {
+    "from": "2017-08-17",
+    "buyhold_sharpe": 0.96052,
+    "regime_sharpe": 1.44727,
+    "buyhold_maxdd": -0.83187,
+    "regime_maxdd": -0.62589,
+    "zmom_sharpe": 0.53376,
+    "z_N": 124,
+    "z_acc": 0.56452,
+    "z_always_long": 0.66129
+   },
+   "eth_binance": {
+    "from": "2017-08-17",
+    "buyhold_sharpe": 0.82832,
+    "regime_sharpe": 1.0638,
+    "buyhold_maxdd": -0.93966,
+    "regime_maxdd": -0.63842,
+    "zmom_sharpe": 0.77394,
+    "z_N": 137,
+    "z_acc": 0.58394,
+    "z_always_long": 0.61314
+   },
+   "sol_binance": {
+    "from": "2020-08-11",
+    "buyhold_sharpe": 1.40699,
+    "regime_sharpe": 1.75778,
+    "buyhold_maxdd": -0.9627,
+    "regime_maxdd": -0.68711,
+    "zmom_sharpe": 0.18877,
+    "z_N": 88,
+    "z_acc": 0.51136,
+    "z_always_long": 0.57955
+   }
+  },
+  "regime_sma_pm20pct_sharpe": {
+   "40": 1.68758,
+   "45": 1.67588,
+   "50": 1.57141,
+   "55": 1.39408,
+   "60": 1.40251
+  },
+  "z_acc_pm20pct": {
+   "w16_lam1.9_h4": 0.5575,
+   "w16_lam1.9_h5": 0.5175,
+   "w16_lam1.9_h6": 0.5475,
+   "w16_lam2.4_h4": 0.578,
+   "w16_lam2.4_h5": 0.5963,
+   "w16_lam2.4_h6": 0.6239,
+   "w16_lam2.9_h4": 0.56,
+   "w16_lam2.9_h5": 0.68,
+   "w16_lam2.9_h6": 0.68,
+   "w20_lam1.9_h4": 0.581,
+   "w20_lam1.9_h5": 0.5486,
+   "w20_lam1.9_h6": 0.5579,
+   "w20_lam2.4_h4": 0.5865,
+   "w20_lam2.4_h5": 0.5714,
+   "w20_lam2.4_h6": 0.5789,
+   "w20_lam2.9_h4": 0.6,
+   "w20_lam2.9_h5": 0.675,
+   "w20_lam2.9_h6": 0.65,
+   "w24_lam1.9_h4": 0.5811,
+   "w24_lam1.9_h5": 0.5439,
+   "w24_lam1.9_h6": 0.5592,
+   "w24_lam2.4_h4": 0.6025,
+   "w24_lam2.4_h5": 0.5839,
+   "w24_lam2.4_h6": 0.6335,
+   "w24_lam2.9_h4": 0.6458,
+   "w24_lam2.9_h5": 0.7083,
+   "w24_lam2.9_h6": 0.6875
+  }
+ },
+ "6_statistics": {
+  "returns_excess_kurtosis": 11.3321,
+  "returns_skew": -0.66696,
+  "jarque_bera_p": 0.0,
+  "worst_day": -0.46473,
+  "worst_day_in_sigmas": -12.36966,
+  "base_rate_up_5d": 0.54645,
+  "up_rate_after_Z_gt_2.4": {
+   "N_overlapping": 82,
+   "up_rate_overlapping": 0.69512,
+   "N_independent": 47,
+   "up_rate_independent": 0.68085,
+   "p_two_sided_vs_base_rate": 0.08556
+  },
+  "up_rate_after_Z_lt_-2.4": {
+   "N_overlapping": 51,
+   "up_rate_overlapping": 0.62745,
+   "N_independent": 31,
+   "up_rate_independent": 0.67742,
+   "p_two_sided_vs_base_rate": 0.19694
+  },
+  "regime_next_day_bull_minus_bear": {
+   "diff": 0.004,
+   "t_newey_west": 2.76606,
+   "p_two_sided": 0.00567
+  },
+  "holm_paper_lambda_tests": [
+   {
+    "test": "lam0.5",
+    "p": 0.0205,
+    "holm_threshold": 0.01667,
+    "significant": false
+   },
+   {
+    "test": "lam1.9",
+    "p": 0.0242,
+    "holm_threshold": 0.025,
+    "significant": false
+   },
+   {
+    "test": "lam2.4",
+    "p": 0.0591,
+    "holm_threshold": 0.05,
+    "significant": false
+   }
+  ],
+  "regime": {
+   "sharpe": 1.57141,
+   "sortino": 1.735,
+   "cagr": 0.96698,
+   "max_dd": -0.57416,
+   "calmar": 1.68416,
+   "hit_rate": 0.54088,
+   "profit_factor": 1.37995,
+   "turnover_per_year": 17.40515,
+   "time_in_market": 0.55378,
+   "sharpe_ci95_block_boot": [
+    0.78092,
+    2.34793
+   ],
+   "t_newey_west_mean": 3.90712
+  },
+  "zmom": {
+   "sharpe": 0.33817,
+   "sortino": 0.15066,
+   "cagr": 0.03075,
+   "max_dd": -0.23443,
+   "calmar": 0.13117,
+   "hit_rate": 0.53229,
+   "profit_factor": 1.16701,
+   "turnover_per_year": 6.48777,
+   "time_in_market": 0.15501,
+   "sharpe_ci95_block_boot": [
+    -0.38996,
+    1.10356
+   ],
+   "t_newey_west_mean": 0.89671
+  },
+  "buyhold": {
+   "sharpe": 1.15848,
+   "sortino": 1.59143,
+   "cagr": 0.76948,
+   "max_dd": -0.83399,
+   "calmar": 0.92265,
+   "hit_rate": 0.52351,
+   "profit_factor": 1.19886,
+   "sharpe_ci95_block_boot": [
+    0.44131,
+    1.94226
+   ]
+  },
+  "regime_minus_buyhold": {
+   "mean_daily": -5e-05,
+   "t_newey_west": -0.12103,
+   "sharpe_diff_ci95_block_boot": [
+    -0.09993,
+    0.93991
+   ]
+  }
+ }
+}
