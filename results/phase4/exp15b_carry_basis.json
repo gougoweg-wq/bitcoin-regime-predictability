@@ -1,0 +1,30 @@
+{
+ "from": "2020-01-01",
+ "days": 1826,
+ "annual_return": 0.0991,
+ "annual_vol": 0.0099,
+ "sharpe": 9.58,
+ "sharpe_ci95": [
+  7.15,
+  11.75
+ ],
+ "max_dd": -0.0154,
+ "worst_day": -0.0075,
+ "worst_day_date": "2020-03-13",
+ "by_year_return": {
+  "2020": 0.1161,
+  "2021": 0.2263,
+  "2022": 0.0277,
+  "2023": 0.053,
+  "2024": 0.0832
+ },
+ "basis_bps": {
+  "mean": -0.6,
+  "std": 6.0,
+  "min": -73.6,
+  "max": 31.1
+ },
+ "max_intraday_rise_vs_prev_close": 0.241,
+ "max_intraday_rise_date": "2020-03-13",
+ "margin_buffer_before_liquidation": "\u043e\u043a\u043e\u043b\u043e +49% \u0437\u0430 \u0441\u0443\u0442\u043a\u0438 \u043f\u0440\u0438 \u043c\u0430\u0440\u0436\u0435 0.5 \u043d\u043e\u043c\u0438\u043d\u0430\u043b\u0430"
+}

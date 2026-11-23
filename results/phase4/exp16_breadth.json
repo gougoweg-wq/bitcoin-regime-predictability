@@ -1,0 +1,251 @@
+{
+ "universe": {
+  "symbols_total": 391,
+  "ever_in_top30": 175,
+  "avg_names_per_day": 29.8
+ },
+ "strategies": {
+  "CARRY": {
+   "sharpe": 1.25,
+   "sharpe_ci95": [
+    0.23,
+    2.24
+   ],
+   "annual_return": 0.398,
+   "annual_vol": 0.307,
+   "max_dd": -0.406,
+   "by_year_return": {
+    "2020": 0.493,
+    "2021": 1.017,
+    "2022": -0.343,
+    "2023": 0.238,
+    "2024": 0.85
+   },
+   "funding_part_annual": 0.202,
+   "turnover_per_year": 52.8
+  },
+  "MOM": {
+   "sharpe": 0.55,
+   "sharpe_ci95": [
+    -0.24,
+    1.33
+   ],
+   "annual_return": 0.141,
+   "annual_vol": 0.359,
+   "max_dd": -0.318,
+   "by_year_return": {
+    "2020": 0.15,
+    "2021": 0.28,
+    "2022": 0.0,
+    "2023": 0.176,
+    "2024": 0.048
+   },
+   "funding_part_annual": 0.056,
+   "turnover_per_year": 45.3
+  },
+  "REGIME": {
+   "sharpe": 0.83,
+   "sharpe_ci95": [
+    -0.02,
+    1.75
+   ],
+   "annual_return": 0.348,
+   "annual_vol": 0.533,
+   "max_dd": -0.505,
+   "by_year_return": {
+    "2020": 0.272,
+    "2021": 1.881,
+    "2022": -0.381,
+    "2023": 0.987,
+    "2024": -0.148
+   },
+   "funding_part_annual": -0.099,
+   "turnover_per_year": 11.9
+  },
+  "EW_BUYHOLD": {
+   "sharpe": 0.53,
+   "sharpe_ci95": [
+    -0.32,
+    1.46
+   ],
+   "annual_return": 0.077,
+   "annual_vol": 0.879,
+   "max_dd": -0.902,
+   "by_year_return": {
+    "2020": 0.66,
+    "2021": 1.841,
+    "2022": -0.85,
+    "2023": 1.332,
+    "2024": -0.153
+   },
+   "funding_part_annual": -0.11,
+   "turnover_per_year": 6.8
+  },
+  "BTC_BUYHOLD": {
+   "sharpe": 0.92,
+   "sharpe_ci95": [
+    -0.06,
+    1.91
+   ],
+   "annual_return": 0.454,
+   "annual_vol": 0.614,
+   "max_dd": -0.789,
+   "by_year_return": {
+    "2020": 1.878,
+    "2021": 0.177,
+    "2022": -0.657,
+    "2023": 1.365,
+    "2024": 0.963
+   }
+  },
+  "COMBO_CARRY_MOM": {
+   "sharpe": 1.23,
+   "sharpe_ci95": [
+    0.32,
+    2.14
+   ],
+   "annual_return": 0.091,
+   "annual_vol": 0.073,
+   "max_dd": -0.077,
+   "by_year_return": {
+    "2020": 0.097,
+    "2021": 0.187,
+    "2022": -0.057,
+    "2023": 0.069,
+    "2024": 0.128
+   }
+  }
+ },
+ "correlations": {
+  "CARRY": {
+   "CARRY": 1.0,
+   "MOM": 0.06,
+   "REGIME": -0.15,
+   "EW_BUYHOLD": -0.08,
+   "BTC_BUYHOLD": -0.08,
+   "COMBO_CARRY_MOM": 0.73
+  },
+  "MOM": {
+   "CARRY": 0.06,
+   "MOM": 1.0,
+   "REGIME": 0.2,
+   "EW_BUYHOLD": 0.01,
+   "BTC_BUYHOLD": -0.01,
+   "COMBO_CARRY_MOM": 0.73
+  },
+  "REGIME": {
+   "CARRY": -0.15,
+   "MOM": 0.2,
+   "REGIME": 1.0,
+   "EW_BUYHOLD": 0.8,
+   "BTC_BUYHOLD": 0.64,
+   "COMBO_CARRY_MOM": 0.04
+  },
+  "EW_BUYHOLD": {
+   "CARRY": -0.08,
+   "MOM": 0.01,
+   "REGIME": 0.8,
+   "EW_BUYHOLD": 1.0,
+   "BTC_BUYHOLD": 0.8,
+   "COMBO_CARRY_MOM": -0.05
+  },
+  "BTC_BUYHOLD": {
+   "CARRY": -0.08,
+   "MOM": -0.01,
+   "REGIME": 0.64,
+   "EW_BUYHOLD": 0.8,
+   "BTC_BUYHOLD": 1.0,
+   "COMBO_CARRY_MOM": -0.06
+  },
+  "COMBO_CARRY_MOM": {
+   "CARRY": 0.73,
+   "MOM": 0.73,
+   "REGIME": 0.04,
+   "EW_BUYHOLD": -0.05,
+   "BTC_BUYHOLD": -0.06,
+   "COMBO_CARRY_MOM": 1.0
+  }
+ },
+ "regime_conditional": {
+  "CARRY": {
+   "bull": {
+    "days": 922,
+    "annual_return": 0.587,
+    "sharpe": 1.77,
+    "t_nw": 2.51
+   },
+   "bear": {
+    "days": 723,
+    "annual_return": 0.121,
+    "sharpe": 0.45,
+    "t_nw": 0.6
+   },
+   "diff_bull_minus_bear_annual": 0.466,
+   "diff_t_nw": 1.55,
+   "by_year_[bull, bear]_annual": {
+    "2020": [
+     1.24,
+     -0.1
+    ],
+    "2021": [
+     0.71,
+     0.87
+    ],
+    "2022": [
+     -0.4,
+     -0.38
+    ],
+    "2023": [
+     0.02,
+     0.73
+    ],
+    "2024": [
+     1.05,
+     -0.1
+    ]
+   }
+  },
+  "MOM": {
+   "bull": {
+    "days": 922,
+    "annual_return": 0.098,
+    "sharpe": 0.25,
+    "t_nw": 0.49
+   },
+   "bear": {
+    "days": 723,
+    "annual_return": 0.322,
+    "sharpe": 1.01,
+    "t_nw": 1.48
+   },
+   "diff_bull_minus_bear_annual": -0.223,
+   "diff_t_nw": -0.74,
+   "by_year_[bull, bear]_annual": {
+    "2020": [
+     -0.03,
+     1.28
+    ],
+    "2021": [
+     0.18,
+     0.62
+    ],
+    "2022": [
+     -0.18,
+     0.11
+    ],
+    "2023": [
+     0.09,
+     0.45
+    ],
+    "2024": [
+     0.2,
+     -0.1
+    ]
+   }
+  }
+ },
+ "funding_dispersion_annualized": {
+  "bull": 0.272,
+  "bear": 0.37
+ }
+}
