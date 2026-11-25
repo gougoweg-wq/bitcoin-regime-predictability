@@ -1,0 +1,113 @@
+{
+ "A_permutation": {
+  "development": {
+   "t_by_cell": [
+    2.15,
+    3.48,
+    1.57,
+    -1.57,
+    -0.64,
+    1.22
+   ],
+   "bull_mid_t": 3.48,
+   "max_abs_t": 3.48,
+   "familywise_p_of_bull_mid": 0.073,
+   "null_95pct_of_max_abs_t": 3.66,
+   "single_cell_p_bull_mid": 0.006
+  },
+  "holdout": {
+   "t_by_cell": [
+    -0.28,
+    2.72,
+    -0.91,
+    0.5,
+    -1.89,
+    -0.52
+   ],
+   "bull_mid_t": 2.72,
+   "max_abs_t": 2.72,
+   "familywise_p_of_bull_mid": 0.0178,
+   "null_95pct_of_max_abs_t": 2.49,
+   "single_cell_p_bull_mid": 0.0024
+  }
+ },
+ "B_simulation": {
+  "iid_shuffle": {
+   "simulations": 2000,
+   "share_finding_a_cell_in_development": 0.1975,
+   "share_found_and_confirmed_on_holdout": 0.0265,
+   "share_as_strong_as_observed": 0.0005,
+   "null_95pct_max_abs_t_development": 3.2
+  },
+  "block_5_days": {
+   "simulations": 2000,
+   "share_finding_a_cell_in_development": 0.2285,
+   "share_found_and_confirmed_on_holdout": 0.027,
+   "share_as_strong_as_observed": 0.0005,
+   "null_95pct_max_abs_t_development": 3.32
+  }
+ },
+ "C_power": {
+  "days_to_detect_56.3pct_vs_50pct": 388,
+  "days_to_detect_55pct_vs_50pct": 617,
+  "days_to_detect_52pct_vs_50pct": 3863,
+  "bull_mid_daily_mean": 0.004751614660857348,
+  "bull_mid_daily_sd": 0.03277195340900195,
+  "days_to_detect_bull_mid_mean": 295,
+  "power_of_holdout_freq_test_n95": 0.3372041266241099,
+  "bull_mid_days_per_year": 66.0
+ },
+ "D_tail_risk": {
+  "development_2017_2024": {
+   "regime_rule": {
+    "VaR95_pct": 3.45,
+    "ES95_pct": 6.05,
+    "VaR99_pct": 7.72,
+    "ES99_pct": 9.96,
+    "worst_day_pct": -13.98,
+    "ann_vol_pct": 49.8
+   },
+   "buy_and_hold": {
+    "VaR95_pct": 5.7,
+    "ES95_pct": 8.41,
+    "VaR99_pct": 10.11,
+    "ES99_pct": 13.48,
+    "worst_day_pct": -39.5,
+    "ann_vol_pct": 70.5
+   }
+  },
+  "holdout_2025_2026": {
+   "regime_rule": {
+    "VaR95_pct": 2.07,
+    "ES95_pct": 3.05,
+    "VaR99_pct": 3.55,
+    "ES99_pct": 4.6,
+    "worst_day_pct": -7.31,
+    "ann_vol_pct": 25.7
+   },
+   "buy_and_hold": {
+    "VaR95_pct": 3.46,
+    "ES95_pct": 4.96,
+    "VaR99_pct": 5.61,
+    "ES99_pct": 7.91,
+    "worst_day_pct": -14.02,
+    "ann_vol_pct": 42.9
+   }
+  },
+  "student_t_fit_bull": {
+   "nu": 2.64,
+   "scale_pct": 2.14,
+   "n": 1419
+  },
+  "student_t_fit_bear": {
+   "nu": 2.18,
+   "scale_pct": 2.02,
+   "n": 1225
+  },
+  "student_t_fit_all": {
+   "nu": 2.39,
+   "scale_pct": 2.08,
+   "n": 2644
+  }
+ }
+}

@@ -1,6 +1,6 @@
 # Is Bitcoin's Direction Predictable? A Pre-Registered Out-of-Sample Test of Regime-Based Forecasting
 
-**[Author name]** · November 2026 · Code and data: *[repository link]*
+**Matvei Shabashov** · November 2026 · Code and data: *[repository link]*
 
 ---
 
@@ -8,7 +8,7 @@
 
 I test whether a regime-based statistical model can forecast short-term Bitcoin returns, and I do so under a protocol designed to make self-deception difficult: every forecast uses only past information, sixteen candidate improvements are evaluated by walk-forward validation, and twelve hypotheses are then tested once on a 22-month hold-out (January 2025 – October 2026) under success criteria fixed in advance.
 
-Three results survive. (i) A trend regime defined by the 50-day moving average separates next-day mean returns by 0.40% per day (Newey–West $t = 2.77$) and, as a long-or-flat rule, returned +19.8% on the hold-out while the asset lost 17.1%. (ii) A sequential Bayesian model over six market types isolates one type, rising trend with mid-range volatility, whose drift is significant in development ($t = 3.48$, 645 days) and replicates out of sample ($t = 2.72$, 95 days). (iii) Volatility regime is forecastable with 60–66% accuracy by a parameter-free rule, replicated at 58–65%.
+Three results survive. (i) A trend regime defined by the 50-day moving average separates next-day mean returns by 0.40% per day (Newey–West $t = 2.77$) and, as a long-or-flat rule, returned +19.8% on the hold-out while the asset lost 17.1%. (ii) A sequential Bayesian model over six market types isolates one type, rising trend with mid-range volatility, whose drift is significant in development ($t = 3.48$, 645 days) and replicates out of sample ($t = 2.72$, 95 days). (iii) Volatility regime is forecastable with 60–66% accuracy by a parameter-free rule, replicated at 58–65%. In simulations of the full discovery-and-replication procedure on return series with no predictability, a result as strong as (ii) arose in 1 of 2,000 runs.
 
 Direction itself is close to unpredictable. Gradient-boosted trees (AUC 0.497), neural networks (48% on hold-out) and a momentum filter that an earlier version of this work reported at 60.76% all fail against the baseline of always predicting a rise. A cross-sectional funding-carry strategy that was positive in all 108 tested configurations during development (Sharpe 1.25) also failed out of sample (Sharpe 0.14), a reminder that parameter robustness does not protect against regime change. The surviving evidence supports a narrow conclusion: Bitcoin's *state* is persistent and measurable; its next move is not.
 
@@ -26,9 +26,10 @@ This project began as one of those claims. An earlier version reported that a mo
 
 1. **A replication audit of my own result.** The 60.76% figure is shown to be 57.14%, statistically insignificant, inferior to always predicting a rise, and attributable to three identifiable errors (Section 6.1).
 2. **A corrected Bayesian formulation.** The original formula inferred a regime that was already observable. I replace it with a sequential posterior for the *next-day return distribution* conditional on an observable market type (Section 3.2).
-3. **A pre-registered hold-out.** Twelve hypotheses with fixed parameters and stated success criteria are tested once on unseen data. Seven pass, three fail, one is inconclusive and one is reference-only (Section 7).
-4. **A documented set of negative results.** Sixteen improvements, including meta-labelling, neural networks and funding-rate features, are reported with their out-of-sample performance whether or not they worked.
-5. **Full reproducibility.** One script per result, checksummed data, and a version history in which failed experiments are preserved on their own branches.
+3. **A calibrated false-positive rate.** A simulation of the full procedure on unpredictable data shows that a nominal 5% threshold yields a false discovery in one development sample in five, and that requiring hold-out replication reduces this to 2.7% (Section 8).
+4. **A pre-registered hold-out.** Twelve hypotheses with fixed parameters and stated success criteria are tested once on unseen data. Seven pass, three fail, one is inconclusive and one is reference-only (Section 7).
+5. **A documented set of negative results.** Sixteen improvements, including meta-labelling, neural networks and funding-rate features, are reported with their out-of-sample performance whether or not they worked.
+6. **Full reproducibility.** One script per result, checksummed data, and a version history in which failed experiments are preserved on their own branches.
 
 ---
 
@@ -134,7 +135,7 @@ The remaining difference is significant (Newey–West $t = 2.77$, $p = 0.006$). 
 
 *Mean next-day log return; Newey–West $t$-statistics.*
 
-With six types the Bonferroni threshold at the 5% level is $|t| > 2.64$. Only Bull / mid passes in development, and it is the only type that is significant on the hold-out. Frequencies of rising days in that type are 56.3% and 55.8%.
+With six types the Bonferroni threshold at the 5% level is $|t| > 2.64$. Only Bull / mid passes in development, and it is the only type that is significant on the hold-out. Section 8 shows that this threshold is too lenient for serially dependent data and re-examines the result with a permutation test and simulation. Frequencies of rising days in that type are 56.3% and 55.8%.
 
 ![Figure 2](figures/fig2_cells.png)
 
@@ -172,6 +173,18 @@ A long-or-flat rule, holding Bitcoin only after a Bull label, with 0.10% cost pe
 ![Figure 4](figures/fig4_equity.png)
 
 Three qualifications apply. The gain is in risk rather than mean return: mean daily returns of the two rules are indistinguishable in development ($t = -0.12$), and the rule is out of the market 45% of the time. The Sharpe difference is not statistically significant, with bootstrap intervals of $(-0.10,\ 0.94)$ in development and $(-0.60,\ 1.54)$ on the hold-out. And the regime rule does not prevent losses in sustained declines: it lost 35% in 2018 and 48% in 2022.
+
+**Tail risk.** The reduction in risk is concentrated where it matters. Daily Value-at-Risk and Expected Shortfall (the mean loss on days beyond the VaR threshold), Binance prices after costs:
+
+| | Development, 2017–2024 | | Hold-out, 2025–2026 | |
+| :-- | :-- | :-- | :-- | :-- |
+| | Regime rule | Buy and hold | Regime rule | Buy and hold |
+| Annualised volatility | 49.8% | 70.5% | 25.7% | 42.9% |
+| 99% Value-at-Risk | 7.7% | 10.1% | 3.6% | 5.6% |
+| 99% Expected Shortfall | 10.0% | 13.5% | 4.6% | 7.9% |
+| Worst day | −14.0% | −39.5% | −7.3% | −14.0% |
+
+A Student-$t$ distribution fitted by maximum likelihood to next-day returns gives $\nu = 2.64$ degrees of freedom in Bull regimes and $\nu = 2.18$ in Bear regimes. Both are below 4, the point at which kurtosis ceases to exist, and the Bear value is close to 2, where variance itself diverges. Tails are heavier in Bear regimes, which is where the rule is out of the market.
 
 **Robustness.** The rule has a positive Sharpe ratio for every moving-average length from 10 to 200 days, with Deflated Sharpe Ratio above 0.999 against zero and a break-even cost of 1.20% per switch, twelve times the assumed fee. It also improves on buy-and-hold for Ethereum (Sharpe 1.06 against 0.83) and Solana (1.76 against 1.41), and across the 30-contract universe (0.83 against 0.53, drawdown −51% against −90%).
 
@@ -270,10 +283,49 @@ A procedural note: the criteria were stated before the run and the frozen code w
 
 ---
 
-## 8. Limitations
+## 8. Could the Replicated Result Be Chance?
+
+The analyses in this section were run after the hold-out and introduce no new trading hypotheses. They ask how much confidence the market-type result of Section 4.2 deserves.
+
+### 8.1 Permutation test for the best of six
+
+Bull / mid was the largest of six $t$-statistics, so its significance must account for the selection. I shifted the sequence of market-type labels circularly against the return series by a random offset, 5,000 times. This preserves the autocorrelation of both series and destroys only the link between them, giving the null distribution of the *maximum* $|t|$ across six types.
+
+| | Observed $t$ | 95th percentile of null max $|t|$ | Family-wise $p$ | Single-type $p$ |
+| :-- | :-- | :-- | :-- | :-- |
+| Development | 3.48 | 3.66 | 0.073 | 0.006 |
+| Hold-out | 2.72 | 2.49 | 0.018 | 0.002 |
+
+The development result is weaker than the Bonferroni comparison suggested: once serial dependence is respected, the best of six types reaches $p = 0.073$, short of the 5% level. The hold-out is where the evidence is. There the type was named in advance, so the single-type $p = 0.002$ applies, and even the family-wise value is 0.018.
+
+### 8.2 Simulating the whole procedure under no predictability
+
+A permutation test examines one stage. To assess the entire discovery-then-replication sequence, I generated 2,000 artificial price histories by reshuffling Bitcoin's actual daily returns, which keeps their fat-tailed distribution and removes any dependence of tomorrow on today's state. For each history I recomputed moving averages, volatility ranks and market types from scratch, selected the best type on the first 3,549 days, and checked it on the remaining 668.
+
+| Outcome under the null | Shuffled returns | 5-day blocks |
+| :-- | :-- | :-- |
+| Some type passes $|t| > 2.64$ in development | 19.8% | 22.9% |
+| ...and the same type has the same sign with $|t| > 1.645$ on the hold-out | 2.7% | 2.7% |
+| ...as strong as observed ($|t| \ge 3.48$, then $\ge 2.72$) | 0.05% | 0.05% |
+
+Two conclusions follow. The nominal 5% Bonferroni threshold produces a false discovery in about one development sample in five, so a development $t$-statistic alone is weak evidence however large it looks. And the hold-out is what restores control: requiring replication cuts the false-positive rate to 2.7%, and a result as strong as the one observed occurred once in 2,000 simulations.
+
+### 8.3 Power: why the frequency test could not succeed
+
+Section 4.2 reported that the frequency of rising days on the hold-out (55.8%) was not significant. A power calculation shows it could hardly have been. To detect a true frequency of 56.3% against 50% with 80% power in a one-sided 5% test requires
+
+$$n = \left(\frac{z_{0.95}\sqrt{0.5 \cdot 0.5} + z_{0.80}\sqrt{0.563 \cdot 0.437}}{0.563-0.5}\right)^{2} = 388 \text{ days}$$
+
+The hold-out contained 95 days of this type, giving a power of 34%. The type occurs about 66 days a year, so a conclusive frequency test needs roughly six years. A test on the mean needs fewer observations, 295 days at the development effect size, which is why the mean replicated first.
+
+For comparison, establishing a 52% directional accuracy, the level a neural network reached in development, would need about 3,900 days. Claims of small directional edges on a few hundred observations cannot be verified at all.
+
+---
+
+## 9. Limitations
 
 - **Sample.** One primary asset and roughly a decade of data. The hold-out is 22 months of a declining market.
-- **Power.** The replicated market-type result rests on 95 clustered days. It should be read as encouraging, not settled.
+- **Power.** The replicated market-type result rests on 95 clustered days. Its development-stage significance does not survive a permutation test for selection ($p = 0.073$); the case rests on the pre-specified hold-out. It should be read as encouraging, not settled.
 - **Significance of economic gains.** No Sharpe-ratio difference in this study is statistically significant; the sample would need to be several times longer.
 - **Design choices.** The 50-day window, 30-day volatility, tercile split and prior strength were fixed in advance but remain choices. Sensitivity was checked for the regime rule and not exhaustively for the six-type model.
 - **Execution.** Returns assume fills at the daily close with a flat fee. Funding-carry results exclude exchange counterparty risk, which is the dominant risk of that trade.
@@ -283,13 +335,13 @@ Nothing here is investment advice.
 
 ---
 
-## 9. Conclusion
+## 10. Conclusion
 
 A regime-based model does find structure in Bitcoin returns, and the structure is specific. The trend regime shifts the mean of the next day's return and reduces drawdown when used as an exposure switch. One of six market types has a drift that is significant in development and again on unseen data. The scale of coming moves is forecastable about two times in three.
 
 Direction is a different matter. Across a Bayesian formula, boosted trees and neural networks, one-day directional accuracy never exceeded the mid-fifties in a favourable regime and was indistinguishable from the asset's base rate overall. A headline accuracy of 60.76% in an earlier version of this work, and a carry strategy with a development Sharpe of 1.25, both failed on data they had not seen.
 
-The methodological conclusion may matter more than the empirical one. The two results that looked strongest in development were the two that failed, and the results that survived were modest from the start. The benchmark of always predicting a rise, a correction for the number of configurations tried, and a single-use hold-out were each enough, independently, to reject the original claim.
+The methodological conclusion may matter more than the empirical one. The two results that looked strongest in development were the two that failed, and the results that survived were modest from the start. The benchmark of always predicting a rise, a correction for the number of configurations tried, and a single-use hold-out were each enough, independently, to reject the original claim. Simulation adds a quantitative warning: on data with no predictability at all, this study's own discovery step would have reported a significant market type one time in five.
 
 ---
 
@@ -329,6 +381,7 @@ Newey, W. K., & West, K. D. (1987). A simple, positive semi-definite, heterosked
 | 5 | `src/meta.py`, `src/exp14_nn_long.py`, experiment branches `exp/*` | `results/phase4/` |
 | 6.2 | `src/exp16_breadth.py`, `src/exp16b_carry_robust.py` | `results/phase4/exp16*.json` |
 | 7 | `src/holdout.py` | `results/holdout/holdout.json` |
+| 4.4 (tail risk), 8 | `src/exp17_robustness.py` | `results/phase4/exp17_robustness.json` |
 | Figures | `src/paper_figures.py` | `paper/figures/` |
 
 Data files are listed with SHA-256 checksums in `data/SHA256SUMS`. Random seeds are fixed at 42 for all bootstraps and 0–4 for model ensembles.

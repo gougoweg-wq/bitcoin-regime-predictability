@@ -1,6 +1,6 @@
 # Is Bitcoin's Direction Predictable?
 
-A pre-registered, out-of-sample test of regime-based forecasting for Bitcoin.
+A pre-registered, out-of-sample test of regime-based forecasting for Bitcoin, by Matvei Shabashov.
 
 **Paper:** [paper/Bitcoin_Regime_Predictability.md](paper/Bitcoin_Regime_Predictability.md) · [Word version](paper/Bitcoin_Regime_Predictability.docx)
 
@@ -19,6 +19,8 @@ An earlier version of this project claimed 60.76% accuracy in predicting Bitcoin
 | Neural networks, direction | 52% | 48% |
 | Cross-sectional funding carry | Sharpe 1.25, positive in 108 of 108 variants | Sharpe 0.14 |
 
+In 2,000 simulations of the whole discovery-and-replication procedure on data with no predictability, a market-type result as strong as the one reported arose once; the discovery step alone produced a false positive in one run in five.
+
 Seven of twelve pre-registered hypotheses passed, three failed, one was inconclusive and one was reference-only. The full scorecard is Section 7 of the paper.
 
 ![Mean next-day return by market type](paper/figures/fig2_cells.png)
@@ -36,6 +38,7 @@ python -m venv .venv && .venv/bin/pip install -r requirements.txt
 .venv/bin/python src/exp10_bayes.py     # sequential Bayesian formula
 .venv/bin/python src/exp12_vol_predict.py
 .venv/bin/python src/holdout.py         # the single hold-out run
+.venv/bin/python src/exp17_robustness.py  # permutation test, null simulation, power, tail risk
 .venv/bin/python src/paper_figures.py
 ```
 
