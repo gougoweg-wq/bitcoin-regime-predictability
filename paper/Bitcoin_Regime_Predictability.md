@@ -1,6 +1,6 @@
 # Is Bitcoin's Direction Predictable? A Pre-Registered Out-of-Sample Test of Regime-Based Forecasting
 
-**Matvei Shabashov** · November 2026 · Code and data: *[repository link]*
+**Matvei Shabashov** · November 2026 · Code and data: [github.com/gougoweg-wq/bitcoin-regime-predictability](https://github.com/gougoweg-wq/bitcoin-regime-predictability)
 
 ---
 
