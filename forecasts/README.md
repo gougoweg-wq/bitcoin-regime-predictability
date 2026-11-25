@@ -7,8 +7,8 @@ Each row is committed to git when it is made. Because a commit cannot be back-da
 rewriting public history, the log is a tamper-evident record that forecasts precede outcomes. This extends
 the paper's hold-out indefinitely: every new day is out of sample.
 
-Start it by hand from the Actions tab (`forward-test` → Run workflow), or enable the daily schedule in
-`.github/workflows/forward-test.yml`. Locally:
+It runs daily at 00:20 UTC (`.github/workflows/forward-test.yml`) and can also be started by hand from the
+Actions tab (`forward-test` → Run workflow). Locally:
 
 ```bash
 python -m btcregime forecast --append forecasts/forward_log.csv

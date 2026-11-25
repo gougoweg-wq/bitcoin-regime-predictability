@@ -1,13 +1,13 @@
 # Forward test: appends one forecast per day to forecasts/forward_log.csv and commits it.
 # The commit history is the timestamp, so each forecast is provably made before its outcome.
 #
-# Runs only when started by hand. To make it daily, uncomment the two `schedule` lines.
+# Runs daily at 00:20 UTC and can also be started by hand.
 name: forward-test
 
 on:
   workflow_dispatch:
-  # schedule:
-  #   - cron: "20 0 * * *"      # 00:20 UTC, just after the daily candle closes
+  schedule:
+    - cron: "20 0 * * *"      # 00:20 UTC, just after the daily candle closes
 
 permissions:
   contents: write
