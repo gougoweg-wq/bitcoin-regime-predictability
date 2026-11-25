@@ -103,5 +103,10 @@
   "worst_date": "2020-03-12",
   "best": 0.2251189543413279,
   "best_date": "2017-12-07"
+ },
+ "null_simulation": {
+  "found": 0.1805,
+  "confirmed": 0.015,
+  "as_strong": 0.0
  }
 }

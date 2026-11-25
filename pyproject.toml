@@ -1,0 +1,26 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "btcregime"
+version = "1.0.0"
+description = "Regime-based statistical modelling of Bitcoin returns, with a pre-registered out-of-sample test"
+readme = "README.md"
+license = { text = "MIT" }
+authors = [{ name = "Matvei Shabashov" }]
+requires-python = ">=3.10"
+dependencies = ["numpy", "pandas", "scipy"]
+
+[project.optional-dependencies]
+research = ["matplotlib", "scikit-learn", "lightgbm", "pyarrow", "yfinance"]
+test = ["pytest"]
+
+[project.scripts]
+btcregime = "btcregime.__main__:main"
+
+[tool.setuptools]
+packages = ["btcregime"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]

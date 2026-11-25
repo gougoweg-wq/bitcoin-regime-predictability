@@ -1,0 +1,16 @@
+cff-version: 1.2.0
+message: "If you use this work, please cite it as below."
+title: "Is Bitcoin's Direction Predictable? A Pre-Registered Out-of-Sample Test of Regime-Based Forecasting"
+authors:
+  - family-names: Shabashov
+    given-names: Matvei
+date-released: 2026-11-25
+version: 1.0.0
+url: "https://github.com/gougoweg-wq/bitcoin-regime-predictability"
+license: MIT
+keywords:
+  - bitcoin
+  - regime models
+  - bayesian inference
+  - backtest overfitting
+  - out-of-sample validation

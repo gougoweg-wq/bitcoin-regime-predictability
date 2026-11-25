@@ -80,3 +80,20 @@ r_all = np.log(p).diff().dropna()[:DEV_END]
 N["returns_2017_2024"] = {"n": len(r_all), "share_abs_gt_10pct": float((r_all.abs() > 0.10).mean()), "count_abs_gt_10pct": int((r_all.abs() > 0.10).sum()),
                           "worst": float(r_all.min()), "worst_date": str(r_all.idxmin().date()), "best": float(r_all.max()), "best_date": str(r_all.idxmax().date())}
 json.dump(N, open("paper/numbers.json", "w"), indent=1); print(json.dumps(N, indent=1))
+
+# --- Рис. 5: вся процедура на рядах без предсказуемости
+sim = pd.read_csv("results/phase4/exp17b_null_sims.csv")
+fig, ax = plt.subplots(figsize=(7, 4.2))
+ax.scatter(sim.dev_max_abs_t, sim.holdout_t_same_sign, s=7, color=MUTED, alpha=0.35, lw=0, label="2,000 simulated histories with no predictability")
+ax.axvline(2.64, color=MUTED, lw=1, ls="--"); ax.axhline(1.645, color=MUTED, lw=1, ls="--")
+ax.scatter([3.48], [2.72], s=110, color=ORANGE, edgecolor="white", lw=1.5, zorder=5, label="Observed: Bull / mid")
+ax.annotate("observed\n(3.48, 2.72)", (3.48, 2.72), xytext=(3.85, 3.25), fontsize=9, color=INK, arrowprops={"arrowstyle": "-", "color": MUTED, "lw": 0.8})
+found = float((sim.dev_max_abs_t > 2.64).mean()); conf = float(((sim.dev_max_abs_t > 2.64) & (sim.holdout_t_same_sign > 1.645)).mean())
+ax.text(2.68, -3.6, f"discovery threshold\n{found:.0%} of null runs pass", fontsize=8, color=MUTED, va="bottom")
+ax.text(1.05, 1.75, f"replication threshold: {conf:.1%} pass both", fontsize=8, color=MUTED, va="bottom")
+ax.set_xlabel("Best |t| among six market types, development"); ax.set_ylabel("t of the same type on the hold-out"); ax.set_xlim(1, 4.6); ax.set_ylim(-3.8, 3.8)
+ax.legend(fontsize=8, loc="lower left", bbox_to_anchor=(0.0, 1.0), ncol=1)
+ax.set_title("Figure 5. Discovery and replication under the null hypothesis", loc="left", fontsize=11, color=INK, pad=38)
+fig.savefig("paper/figures/fig5_null_simulation.png"); plt.close(fig)
+N["null_simulation"] = {"found": found, "confirmed": conf, "as_strong": float(((sim.dev_max_abs_t >= 3.48) & (sim.holdout_t_same_sign >= 2.72)).mean())}
+json.dump(N, open("paper/numbers.json", "w"), indent=1); print(N["null_simulation"])

@@ -2,3 +2,5 @@
 __pycache__/
 data/raw_futures/
 data/raw_perp/
+.pytest_cache/
+*.egg-info/

@@ -1,0 +1,30 @@
+# Forward test: appends one forecast per day to forecasts/forward_log.csv and commits it.
+# The commit history is the timestamp, so each forecast is provably made before its outcome.
+#
+# Runs only when started by hand. To make it daily, uncomment the two `schedule` lines.
+name: forward-test
+
+on:
+  workflow_dispatch:
+  # schedule:
+  #   - cron: "20 0 * * *"      # 00:20 UTC, just after the daily candle closes
+
+permissions:
+  contents: write
+
+jobs:
+  forecast:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.x"
+      - run: pip install numpy pandas scipy
+      - run: python -m btcregime forecast --append forecasts/forward_log.csv
+      - run: |
+          git config user.name "forward-test"
+          git config user.email "forward-test@users.noreply.github.com"
+          git add forecasts/forward_log.csv
+          git diff --cached --quiet || git commit -m "Forward test: forecast for the next day"
+          git push
