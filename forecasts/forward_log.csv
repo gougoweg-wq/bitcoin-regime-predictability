@@ -1,2 +1,3 @@
 as_of_close,forecast_for,close,market_type,p_up,mu_hat_pct,p_mu_pos,high_vol_forecast,logged_at_utc
 2026-11-24,2026-11-25,59832.0,Bear / high,0.5021,0.0299,0.5837,True,2026-11-25 18:41
+2026-11-25,2026-11-26,60458.01,Bear / high,0.5029,0.0314,0.5881,True,2026-11-26 08:38
